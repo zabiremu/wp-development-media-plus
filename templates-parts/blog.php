@@ -24,7 +24,7 @@
                     <div class="news-body">
                         <div class="news-content">
                             <div class="date"><?php  echo get_the_date('d M, Y') ?></div>
-                            <h2><a href="blog-single.html"><?php the_title() ?></a></h2>
+                            <h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
                             <p class="text"><?php the_excerpt()?></p>
                         </div>
                     </div>
