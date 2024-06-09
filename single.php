@@ -35,13 +35,21 @@
                             <!-- News Head -->
                             <div class="news-head">
                                 <img src="img/blog1.jpg" alt="#">
+                                
                             </div>
                             <!-- News Title -->
                             <h1 class="news-title"><a href="news-single.html">More than 80 clinical trials launch to test of the coronavirus .</a></h1>
                             <!-- Meta -->
                             <div class="meta">
                                 <div class="meta-left">
-                                    <span class="author"><a href="#"><img src="img/author1.jpg" alt="#">Naimur Rahman</a></span>
+                                    <span class="author"><a href="#">
+                                    <?php 
+                                        $author_id = get_post_field('post_author', get_the_ID());
+                                        echo $author_avatar = get_avatar($author_id);
+                                        $author_name = get_the_author_meta('display_name', $author_id);
+                                        echo $author_name;
+                                    ?></a>
+                                    </span>
                                     <span class="date"><i class="fa fa-clock-o"></i>03 Feb 2019</span>
                                 </div>
                                 <div class="meta-right">
@@ -202,7 +210,7 @@
                         <ul class="categor-list">
                             <?php $catgories = get_categories(array(
                                 'orderby' => 'name',
-                                'order'   => 'DESC'
+                                'order'   => 'ASC'
                             ));
                             foreach ($catgories as $cat)
                             {
